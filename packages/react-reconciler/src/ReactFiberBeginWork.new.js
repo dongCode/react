@@ -3849,8 +3849,8 @@ function attemptEarlyBailoutIfNoScheduledUpdate(
 }
 
 function beginWork(
-  current: Fiber | null,
-  workInProgress: Fiber,
+  current: Fiber | null, // never mutate
+  workInProgress: Fiber, // mutate
   renderLanes: Lanes,
 ): Fiber | null {
   if (__DEV__) {
@@ -3870,7 +3870,7 @@ function beginWork(
       );
     }
   }
-
+  console.log('begin fiber work', workInProgress.type); // down to top
   if (current !== null) {
     const oldProps = current.memoizedProps;
     const newProps = workInProgress.pendingProps;

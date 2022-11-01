@@ -1827,7 +1827,7 @@ function commitPlacement(finishedWork: Fiber): void {
   if (!supportsMutation) {
     return;
   }
-
+  console.log('commit work on:', finishedWork.type)
   if (enableHostSingletons && supportsSingletons) {
     if (finishedWork.tag === HostSingleton) {
       // Singletons are already in the Host and don't need to be placed

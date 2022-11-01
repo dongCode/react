@@ -871,6 +871,8 @@ function completeWork(
   // to the current tree provider fiber is just as fast and less error-prone.
   // Ideally we would have a special version of the work loop only
   // for hydration.
+  console.log('complete fiber work', workInProgress.type); // top to down
+
   popTreeContext(workInProgress);
   switch (workInProgress.tag) {
     case IndeterminateComponent:

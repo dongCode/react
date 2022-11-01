@@ -5,10 +5,11 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
     <div id="container"></div>
     <script type="text/babel">
-      ReactDOM.render(
-        <h1>Hello World!</h1>,
-        document.getElementById('container')
-      );
+
+      const root = ReactDOM.createRoot(document.getElementById("container"));
+
+      root.render('hello')
+
     </script>
   </body>
 </html>
